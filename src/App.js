@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Header from './componentes/Header';
+import Ropas from './componentes/Ropas';
 
-function App() {
+
+const App = () => {
+  const [productos, setProductos] = useState([]);
+	const [total, setTotal] = useState(0);
+	const [contadorProductos, setContadorProductos] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Header 
+          productos={productos}
+          setProductos={setProductos}
+          total={total}
+          setTotal={setTotal}
+          contadorProductos={contadorProductos}
+          setContadorProductos={setContadorProductos}
+        />
+
+        <Ropas
+          productos={productos}
+          setProductos={setProductos}
+          total={total}
+          setTotal={setTotal}
+          contadorProductos={contadorProductos}
+          setContadorProductos={setContadorProductos}
+        />
+    </>
   );
 }
 
